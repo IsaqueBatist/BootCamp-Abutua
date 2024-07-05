@@ -33,7 +33,9 @@ var categories = [
   { id: 2, name: "Nacional" },
   { id: 3, name: "Importado" }
 ];
-
+function convertToNumber(string) {
+  return string.replace(/\./g, '').replace(',', '.')
+}
 function addNewRow(prodct) {
   let table = document.getElementById('table')
   let {name} = categories[prodct.category-1]
@@ -41,10 +43,10 @@ function addNewRow(prodct) {
     <tr>
       <th scope="row">${prodct.id}</th>
       <td>${prodct.name}</td>
-      <td>${prodct.description}</td>
-      <td>${Intl.NumberFormat({style: 'decimal', currency: 'BRL'}).format(prodct.price)}</td>
+      <td class="d-none d-md-table-cell">${prodct.description}</td>
+      <td>R$ ${Intl.NumberFormat({style: 'decimal', currency: 'BRL'}).format(prodct.price)}</td>
       <td>${name}</td>
-      <td>
+      <td class="d-none d-md-table-cell">
         ${prodct.promotion? `<span class="badge text-bg-success me-1">P</span>` : ``}
         ${prodct.new? `<span class="badge text-bg-primary">L</span>`: ``}
       </td>
@@ -66,7 +68,7 @@ document.getElementById('formRegister').addEventListener('submit', function(even
     id: products.length+1,
     name: document.getElementById('inputName3').value,
     description: document.getElementById('inputDescription3').value,
-    price: document.getElementById('inputPrice3').value,
+    price: convertToNumber(document.getElementById('inputPrice3').value),
     category: document.getElementById("inputClass3").value,
     promotion: document.getElementById('checkboxPromotion').checked,
     new: document.getElementById('checkboxNewProduct').checked,
