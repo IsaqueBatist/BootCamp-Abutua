@@ -21,17 +21,17 @@
           <input type="text" class="form-control" id="username" placeholder="Nome do Usuário:">
         </div>
       </div>
-      <button class="btn btn-primary mt-5">Pesquisar</button>
+      <button class="btn btn-primary mt-5" type="button" onclick="getUser()">Pesquisar</button>
       <form action="">
       </form>
     </section>
 
     <section class="mt-5">
       <h2 class="display-6">Dados do usuário:</h2>
-      <div id="name">Glauco Todesco</div>
-      <div id="html-url">https://github.com/glaucotodesco</div>
-      <div id="company">Abútua Tecnologia</div>
-      <img src="https://avatars.githubusercontent.com/u/17340839?v=4" id="avatar_url" alt="avatarURL" width="250" class="shadow rounded">
+      <div id="name"></div>
+      <div id="html-url"></div>
+      <div id="company"></div>
+      <div id="avatarurl"></div>
     </section>
 
     <section class="mt-5">
@@ -61,6 +61,8 @@
     crossorigin="anonymous"></script>
   <!--JS-->
   <script src="../js/scripts.js"></script>
+  <!--JqueryCDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </body>
 
