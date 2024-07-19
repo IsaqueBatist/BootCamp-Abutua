@@ -1,0 +1,33 @@
+<app-book [book]="book" (saveEmitter)="saveBook()" ></app-book>
+
+<div class="container">
+  <h3>Livros Cadastrados</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Preço</th>
+        <th class="text-end">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+        <td class="text-end">
+          <button class="btn btn-success me-2" (click)="modifyButton(book)">
+            Alterar
+          </button>
+          
+          <button class="btn btn-danger" (click)="deleteBook(book)">
+            Remover
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
