@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { FormComponent } from '../form/form.component';
 import { ICategory } from '../../interfaces/category';
 import { IProduct } from '../../interfaces/product';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-table',
   standalone: true,
   imports: [
-    FormComponent
+    FormComponent,
+    CommonModule
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
@@ -31,11 +33,14 @@ export class TableComponent {
       name: 'Premium'
     }
   ]
-
   product : IProduct = {} as IProduct
+  products: IProduct[] = []
 
   saveProduct(){
-    alert("Produto salvo")
+    this.product.id = this.products.length + 1
+    this.products.push(this.product)
+    this.product = {} as IProduct
+    console.log('Produto salvo', this.products)
   }
   
 }

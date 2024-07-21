@@ -1,5 +1,5 @@
 <section class="container">
-  <app-form [categoryArray]="categories" [product]="product" (emitter)="saveProduct()" ></app-form>
+  <app-form [categoryArray]="categories" [product]="product" (emitter)="saveProduct()"></app-form>
   <h1 class="display-6">Produtos Cadastrados:</h1>
   <div class="row">
     <div class="col-md-10 offset-md-1">
@@ -15,7 +15,18 @@
             <th>
           </tr>
         </thead>
-        <tbody id="table">
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.category.name}}</td>
+            <td>
+              <span *ngIf="product.promotion" class="badge text-bg-success me-1">P</span>
+              <span *ngIf="product.newProduct" class="badge text-bg-primary">L</span>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
