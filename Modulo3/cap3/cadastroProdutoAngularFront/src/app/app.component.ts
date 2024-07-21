@@ -7,7 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localePt, 'pt')
 @Component({
@@ -18,12 +18,13 @@ registerLocaleData(localePt, 'pt')
     HeaderComponent,
     FormComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [
-    {provide: LOCALE_ID, useValue: 'pt'}
+    { provide: LOCALE_ID, useValue: 'pt' }
   ]
 })
 export class AppComponent {

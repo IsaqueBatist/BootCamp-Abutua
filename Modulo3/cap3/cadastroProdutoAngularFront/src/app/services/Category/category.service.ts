@@ -1,32 +1,17 @@
 import { Injectable } from '@angular/core';
 import { ICategory } from '../../interfaces/category';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  categories: ICategory[] = [
-    {
-      id: 1,
-      name: 'Produção Própria'
-    },
-    {
-      id: 2,
-      name: 'Nacional'
-    },
-    {
-      id: 3,
-      name: 'Importado'
-    },
-    {
-      id: 3,
-      name: 'Premium'
-    }
-  ]
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getCategories(): ICategory[] {
-    return this.categories
+  getCategories(): Observable<ICategory[]> {
+    return this.http.get<ICategory[]>("http://localhost:8080/categories")
   }
+
 
 }
