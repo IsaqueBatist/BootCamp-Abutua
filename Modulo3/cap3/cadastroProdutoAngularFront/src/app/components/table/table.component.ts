@@ -3,6 +3,8 @@ import { FormComponent } from '../form/form.component';
 import { ICategory } from '../../interfaces/category';
 import { IProduct } from '../../interfaces/product';
 import { CommonModule } from '@angular/common';
+import { CategoryService } from '../../services/Category/category.service';
+import { ProductService } from '../../services/Product/product.service';
 
 @Component({
   selector: 'app-table',
@@ -15,32 +17,21 @@ import { CommonModule } from '@angular/common';
   styleUrl: './table.component.css'
 })
 export class TableComponent {
-  categories: ICategory[] = [
-    {
-      id: 1,
-      name: 'Produção Própria'
-    },
-    {
-      id: 2,
-      name: 'Nacional'
-    },
-    {
-      id: 3,
-      name: 'Importado'
-    },
-    {
-      id: 3,
-      name: 'Premium'
-    }
-  ]
-  product : IProduct = {} as IProduct
-  products: IProduct[] = []
 
-  saveProduct(){
-    this.product.id = this.products.length + 1
-    this.products.push(this.product)
-    this.product = {} as IProduct
-    console.log('Produto salvo', this.products)
+  categories: ICategory[] = []
+  products: IProduct[] = []
+  product: IProduct = {} as IProduct
+
+  constructor(private categoryService: CategoryService, private productService: ProductService) { }
+
+  ngOnInit(): void {
+    this.categories = this.categoryService.getCategories()
+    this.products = this.productService.getProducts()
   }
-  
+
+  saveProduct() {
+    this.productService.postProduct(this.product)
+    this.product = {} as IProduct
+  }
+
 }
