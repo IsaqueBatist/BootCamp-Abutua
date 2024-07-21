@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './table.component.html',
   styleUrl: './table.component.css',
   providers: [
-    CategoryService
+    CategoryService,
+    ProductService
   ]
 })
 export class TableComponent {
@@ -30,19 +31,28 @@ export class TableComponent {
   constructor(private categoryService: CategoryService, private productService: ProductService) { }
 
   ngOnInit(): void {
-    // this.categories = this.categoryService.getCategories()
-    this.categoryService.getCategories().subscribe(
-      {
-        next: data =>{this.categories = data}
-      }
-    )
-    
-    this.products = this.productService.getProducts()
+    this.loadCategories()
+    this.loadProducts()
+  }
+
+  loadProducts(){ 
+    this.productService.getProducts().subscribe({
+      next: data => { this.products = data }
+    })
+  }
+  loadCategories(){
+    this.categoryService.getCategories().subscribe({
+      next: data => { this.categories = data }
+    })
   }
 
   saveProduct() {
-    this.productService.postProduct(this.product)
-    this.product = {} as IProduct
+    this.productService.postProduct(this.product).subscribe({
+      next: data => {
+        this.products.push(data)
+        this.product = {} as IProduct
+      }
+    })
   }
 
 }
