@@ -24,7 +24,13 @@ export class ProductComponent implements OnInit {
   }
 
   save(){
-    this.saveEmitter.emit();
+    this.saveEmitter.emit(true);
+  }
+  cancel(){
+    this.saveEmitter.emit(false);
+  }
+  selectCategory(category1: Category, category2: Category){
+    return category1 && category2 ? category1.id === category2.id : false;
   }
 
 }

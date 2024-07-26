@@ -5,7 +5,7 @@ export interface Product {
     name : string;
     description : string;
     price : number;
-    category : Category;
+    idcategory : Category;
     promotion : boolean;
     newProduct : boolean;
 }
