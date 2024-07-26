@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
 
   saveProduct() {
     this.productService.save(this.product).subscribe({
-      next: data => {
+      next: (data: Product) => {
         this.products.push(data);
         this.product = {} as Product;
       }
