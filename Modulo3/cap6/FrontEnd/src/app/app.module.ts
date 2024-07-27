@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
 import { LOCALE_ID } from '@angular/core';
@@ -30,14 +31,15 @@ registerLocaleData(localePt, 'pt');
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-    CategoriesComponent
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt'}
