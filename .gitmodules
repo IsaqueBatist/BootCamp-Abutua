@@ -1,3 +1,9 @@
 [submodule "Modulo3/cap4"]
 	path = Modulo3/cap4
 	url = https://github.com/IsaqueBatist/CadastroDeProdutosM3C4.git
+[submodule "Projetos/Modulo1/cap1/Bootcamp-Frases-Motivacionais"]
+	path = Projetos/Modulo1/cap1/Bootcamp-Frases-Motivacionais
+	url = https://github.com/IsaqueBatist/Bootcamp-Frases-Motivacionais.git
+[submodule "Projetos/Modulo1/cap2/Bootcamp-Card-de-games"]
+	path = Projetos/Modulo1/cap2/Bootcamp-Card-de-games
+	url = https://github.com/IsaqueBatist/Bootcamp-Card-de-games.git
