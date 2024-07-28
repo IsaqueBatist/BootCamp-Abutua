@@ -21,7 +21,7 @@ public class ProductService {
   private CategoryService categoryService;
 
 
-  public Product getProductById(int id) {
+  public Product getProductById(long id) {
     Product product = productRepository.findById(id)
         .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
     return product;
@@ -35,12 +35,12 @@ public class ProductService {
     return productRepository.save(product);
   }
 
-  public void deleteById(int id) {
+  public void deleteById(long id) {
     Product product = getProductById(id);
     productRepository.delete(product);
   }
 
-  public void update(int id, Product productUpdate) {
+  public void update(long id, Product productUpdate) {
     Product product = getProductById(id);
     if (productUpdate.getIdcategory() == null) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Category is required");
