@@ -7,3 +7,15 @@
 [submodule "Projetos/Modulo1/cap2/Bootcamp-Card-de-games"]
 	path = Projetos/Modulo1/cap2/Bootcamp-Card-de-games
 	url = https://github.com/IsaqueBatist/Bootcamp-Card-de-games.git
+[submodule "Projetos/Modulo2/cap1/Bootcamp-ProjetoMenu"]
+	path = Projetos/Modulo2/cap1/Bootcamp-ProjetoMenu
+	url = https://github.com/IsaqueBatist/Bootcamp-ProjetoMenu.git
+[submodule "Projetos/Modulo2/cap2/ProjetoMenu-BootStrap"]
+	path = Projetos/Modulo2/cap2/ProjetoMenu-BootStrap
+	url = https://github.com/IsaqueBatist/ProjetoMenu-BootStrap.git
+[submodule "Projetos/Modulo2/cap3/CadastroAlunos"]
+	path = Projetos/Modulo2/cap3/CadastroAlunos
+	url = https://github.com/IsaqueBatist/CadastroAlunos.git
+[submodule "Projetos/Modulo2/cap4/CadastroClientes"]
+	path = Projetos/Modulo2/cap4/CadastroClientes
+	url = https://github.com/IsaqueBatist/CadastroClientes.git
