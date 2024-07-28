@@ -19,3 +19,9 @@
 [submodule "Projetos/Modulo2/cap4/CadastroClientes"]
 	path = Projetos/Modulo2/cap4/CadastroClientes
 	url = https://github.com/IsaqueBatist/CadastroClientes.git
+[submodule "Projetos/Modulo3/cap1/CadastroClientes-c-Backend"]
+	path = Projetos/Modulo3/cap1/CadastroClientes-c-Backend
+	url = https://github.com/IsaqueBatist/CadastroClientes-c-Backend.git
+[submodule "Projetos/Modulo3/cap2/CarroAngular"]
+	path = Projetos/Modulo3/cap2/CarroAngular
+	url = https://github.com/IsaqueBatist/CarroAngular.git
